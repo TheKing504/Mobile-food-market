@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="220dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="4dp">
+
+        <RelativeLayout
+            android:id="@+id/holder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/farm_img"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@color/green"/>
+
+            <TextView
+                android:id="@+id/farm_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/farm_img"
+                android:text="Kmetija Bojan Gorišek"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/farm_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sezonsko sadje in zelenjava"
+                android:textSize="12sp"
+                android:layout_below="@+id/farm_name"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/farm_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Oddaljenost: TODO"
+                android:textSize="12sp"
+                android:layout_below="@+id/farm_description"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="5dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/farm_distance"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp">
+
+                <ImageView
+                    android:id="@+id/ic_star1"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_baseline_star_24"/>
+
+                <ImageView
+                    android:id="@+id/ic_star2"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_baseline_star_24"/>
+
+                <ImageView
+                    android:id="@+id/ic_star3"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_baseline_star_24"/>
+
+                <ImageView
+                    android:id="@+id/ic_star4"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_baseline_star_24"/>
+
+                <ImageView
+                    android:id="@+id/ic_star5"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_baseline_star_24"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

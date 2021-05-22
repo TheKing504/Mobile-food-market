@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -63,6 +64,7 @@ public class FarmActivity extends AppCompatActivity {
         setBasicFarmData(farm.getName(), farm.getDescription(), farm.getAddress(), farm.getPhone(), farm.getEmail(), "TODO");
 
         initList(farm.getItems());
+        setStars(farm.getRating());
 
     }
 
@@ -84,10 +86,35 @@ public class FarmActivity extends AppCompatActivity {
         farmDistance.setText(Html.fromHtml(sourceStringDistance));
     }
 
+    private void setStars(int mark) {
+        if (mark > 5 || mark < 1) {
+            return;
+        }
+
+        ImageView s1 = findViewById(R.id.ic_star1);
+        ImageView s2 = findViewById(R.id.ic_star2);
+        ImageView s3 = findViewById(R.id.ic_star3);
+        ImageView s4 = findViewById(R.id.ic_star4);
+        ImageView s5 = findViewById(R.id.ic_star5);
+
+        ImageView[] stars = new ImageView[5];
+        stars[0] = s1;
+        stars[1] = s2;
+        stars[2] = s3;
+        stars[3] = s4;
+        stars[4] = s5;
+
+        for (int i = 0; i < mark; i++) {
+            stars[i].setColorFilter(ContextCompat.getColor(getApplicationContext(),
+                    R.color.yellow));
+        }
+    }
+
     private void initList(List items) {
         rv.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         rv.setLayoutManager(layoutManager);
+        rv.setNestedScrollingEnabled(false);
 
         farmItemsRecyclerAdapter = new FarmItemsRecyclerAdapter(items);
         rv.setAdapter(farmItemsRecyclerAdapter);

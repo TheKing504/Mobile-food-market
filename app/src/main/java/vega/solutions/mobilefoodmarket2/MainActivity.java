@@ -27,11 +27,16 @@ import vega.solutions.mobilefoodmarket2.http.MobileMarketAPI;
 
 public class MainActivity extends AppCompatActivity {
 
-    MobileMarketApp app;
-    MobileMarketAPI mobileMarketApi;
-    ArrayList<Farm> farms;
+    ArrayList<Farm> farms = new ArrayList<>();
 
     BottomNavigationView bottomNavigationView;
+
+    Fragment home;
+    Fragment search;
+    Fragment settings;
+
+    MobileMarketApp app;
+    MobileMarketAPI mobileMarketApi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,33 +44,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initComponents();
 
-        app = MobileMarketApp.getInstance();
-        mobileMarketApi = new MobileMarketAPI(new HttpClient());
 
-        if (app.getFarms() == null) {
+        if (home == null)
+            home = new HomeFragment();
 
-            mobileMarketApi.getFarms(new APICallback<ArrayList<Farm>>() {
+        setFragment(home);
 
-                @Override
-                public void onCallback(ArrayList<Farm> apiResponse) {
-                    farms = apiResponse;
-                    app.setFarms(farms);
-                    // TODO SET UP UI;
-                }
 
-                @Override
-                public void onFailure(@NotNull Throwable t) {
-                    // TODO SET UP ERROR UI;
-                }
-            });
-
-        } else {
-            farms = app.getFarms();
-            // TODO SET UP UI;
-        }
-
-        // default fragment
-        setFragment(new HomeFragment());
 
         // TODO - fragments should be reused
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -73,13 +58,25 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.home:
-                        setFragment(new HomeFragment());
+
+                        if (home == null)
+                            home = new HomeFragment();
+
+                        setFragment(home);
                         break;
                     case R.id.search:
-                        setFragment(new SearchFragment());
+
+                        if (search == null)
+                            search = new SearchFragment();
+
+                        setFragment(search);
                         break;
                     case R.id.settings:
-                        setFragment(new SettingsFragment());
+
+                        if (settings == null)
+                            settings = new SettingsFragment();
+
+                        setFragment(settings);
                         break;
                 }
                 return true;
@@ -93,12 +90,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initComponents() {
-
-        findViewById(R.id.kmetija_test).setOnClickListener(view -> {
-            Intent intent = new Intent(this, FarmActivity.class);
-            intent.putExtra("ID", 1);
-            startActivity(intent);
-        });
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
 

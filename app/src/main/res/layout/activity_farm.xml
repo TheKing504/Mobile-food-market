@@ -6,101 +6,172 @@
     android:layout_height="match_parent"
     tools:context=".FarmActivity">
 
-    <ImageView
-        android:id="@+id/farm_img"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@color/green"/>
+        android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:id="@+id/farm_data_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/farm_img"
-        android:background="@drawable/farm_decorator"
-        android:paddingBottom="20dp">
-
-        <TextView
-            android:id="@+id/farm_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="15dp"
-            android:text="Kmetija Bojan Gorišek"
-            android:textColor="@color/green"
-            android:textStyle="bold"
-            android:textSize="18sp"/>
-
-        <TextView
-            android:id="@+id/farm_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sezonsko sadje in zelenjava"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/farm_name"
-            android:layout_marginTop="8dp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:id="@+id/farm_address"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/farm_description"
-            android:layout_marginTop="15dp"
-            android:text="Naslov: Cesta Urške Zatlerjeve 1, 1000 Ljubljana"
-            android:paddingHorizontal="25dp"
-            android:textSize="15sp"/>
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/farm_telephone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/farm_address"
-            android:layout_marginTop="10dp"
-            android:text="Telefon: 051 213 888"
-            android:paddingHorizontal="25dp"
-            android:textSize="15sp"/>
+            <ImageView
+                android:id="@+id/farm_img"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@color/green"/>
 
-        <TextView
-            android:id="@+id/farm_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/farm_telephone"
-            android:layout_marginTop="10dp"
-            android:text="Email: kmetija.bojan.gorisek@gmail.com"
-            android:paddingHorizontal="25dp"
-            android:textSize="15sp"/>
+            <RelativeLayout
+                android:id="@+id/farm_data_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/farm_img"
+                android:background="@drawable/farm_decorator"
+                android:paddingBottom="20dp">
 
-        <TextView
-            android:id="@+id/farm_distance"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/farm_email"
-            android:layout_marginTop="10dp"
-            android:text="Oddaljenost: 6 km"
-            android:paddingHorizontal="25dp"
-            android:textSize="15sp"/>
+                <TextView
+                    android:id="@+id/farm_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    android:text="Kmetija Bojan Gorišek"
+                    android:textColor="@color/green"
+                    android:textStyle="bold"
+                    android:textSize="18sp"/>
 
-    </RelativeLayout>
+                <TextView
+                    android:id="@+id/farm_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sezonsko sadje in zelenjava"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/farm_name"
+                    android:layout_marginTop="8dp"
+                    android:textStyle="bold"/>
 
-    <TextView
-        android:id="@+id/ponudba"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp"
-        android:layout_below="@+id/farm_data_container"
-        android:text="Ponudba"
-        android:textColor="@color/green"
-        android:textStyle="bold"
-        android:textSize="16sp"/>
+                <TextView
+                    android:id="@+id/farm_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/farm_description"
+                    android:layout_marginTop="15dp"
+                    android:text="Naslov: Cesta Urške Zatlerjeve 1, 1000 Ljubljana"
+                    android:paddingHorizontal="25dp"
+                    android:textSize="15sp"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_items"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/ponudba"
-        android:layout_marginTop="15dp"
-        tools:listitem="@layout/items_list_item" />
+                <TextView
+                    android:id="@+id/farm_telephone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/farm_address"
+                    android:layout_marginTop="10dp"
+                    android:text="Telefon: 051 213 888"
+                    android:paddingHorizontal="25dp"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/farm_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/farm_telephone"
+                    android:layout_marginTop="10dp"
+                    android:text="Email: kmetija.bojan.gorisek@gmail.com"
+                    android:paddingHorizontal="25dp"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/farm_distance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/farm_email"
+                    android:layout_marginTop="10dp"
+                    android:text="Oddaljenost: 6 km"
+                    android:paddingHorizontal="25dp"
+                    android:textSize="15sp"/>
+
+                <RelativeLayout
+                    android:id="@+id/farm_mark"
+                    android:layout_below="@+id/farm_distance"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="40dp">
+
+                    <TextView
+                        android:id="@+id/mark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Ocena: "
+                        android:layout_centerVertical="true"
+                        android:paddingStart="25dp"
+                        android:textSize="15sp"/>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/mark">
+
+                        <ImageView
+                            android:id="@+id/ic_star1"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/ic_baseline_star_24" />
+
+                        <ImageView
+                            android:id="@+id/ic_star2"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/ic_baseline_star_24" />
+
+                        <ImageView
+                            android:id="@+id/ic_star3"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/ic_baseline_star_24" />
+
+                        <ImageView
+                            android:id="@+id/ic_star4"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/ic_baseline_star_24" />
+
+                        <ImageView
+                            android:id="@+id/ic_star5"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/ic_baseline_star_24" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/ponudba"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:layout_below="@+id/farm_data_container"
+                android:text="Ponudba"
+                android:textColor="@color/green"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_items"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/ponudba"
+                android:layout_marginTop="15dp"
+                tools:listitem="@layout/items_list_item" />
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>
