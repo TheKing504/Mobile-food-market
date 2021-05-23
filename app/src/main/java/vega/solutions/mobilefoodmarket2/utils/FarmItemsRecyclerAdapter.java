@@ -35,12 +35,18 @@ public class FarmItemsRecyclerAdapter extends RecyclerView.Adapter<FarmItemsRecy
 
         Item item = list.get(position);
 
-        holder.tvCategory.setVisibility(View.GONE);
-        holder.itemContainer.setVisibility(View.VISIBLE);
+        if (item.getId() == -2) {
+            holder.tvCategory.setVisibility(View.VISIBLE);
+            holder.itemContainer.setVisibility(View.GONE);
 
-        holder.tvItemName.setText(item.getName());
-        holder.tvPrice.setText(item.getPrice() + "€ / " + item.getUnit());
+            holder.tvCategory.setText(item.getName());
+        } else {
+            holder.tvCategory.setVisibility(View.GONE);
+            holder.itemContainer.setVisibility(View.VISIBLE);
 
+            holder.tvItemName.setText(" • " + item.getName());
+            holder.tvPrice.setText(item.getPrice() + "€ / " + item.getUnit());
+        }
     }
 
     @Override

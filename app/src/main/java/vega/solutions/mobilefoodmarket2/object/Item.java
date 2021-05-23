@@ -8,6 +8,13 @@ public class Item {
     private String unit;
     private String category;
 
+    public Item(int id, String name, float price, String unit, String category) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.unit = unit;
+        this.category = category;
+    }
 
     public int getId() {
         return id;

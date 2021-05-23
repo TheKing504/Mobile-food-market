@@ -13,9 +13,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import vega.solutions.mobilefoodmarket2.object.Farm;
+import vega.solutions.mobilefoodmarket2.object.Item;
 import vega.solutions.mobilefoodmarket2.utils.FarmItemsRecyclerAdapter;
 
 public class FarmActivity extends AppCompatActivity {
@@ -63,9 +65,35 @@ public class FarmActivity extends AppCompatActivity {
 
         setBasicFarmData(farm.getName(), farm.getDescription(), farm.getAddress(), farm.getPhone(), farm.getEmail(), "TODO");
 
-        initList(farm.getItems());
+        ArrayList<Item> itemsSeparated = new ArrayList<>();
+
+        for (Item item : farm.getItems()) {
+            if (!containsCategory(itemsSeparated, item.getCategory())) {
+                itemsSeparated.add(new Item(-2, item.getCategory(), 0.0f, null, null));
+                for (Item item1 : farm.getItems()) {
+                    if (item1.getCategory().equals(item.getCategory())) {
+                        itemsSeparated.add(item1);
+                    }
+                }
+
+            }
+        }
+
+        initList(itemsSeparated);
         setStars(farm.getRating());
 
+    }
+
+    private boolean containsCategory(ArrayList<Item> items, String category) {
+        for (Item item : items) {
+            if (item.getCategory() == null) {
+                continue;
+            }
+            if (item.getCategory().equals(category)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void setBasicFarmData(String name, String description, String address, String telephone, String email, String distance) {
