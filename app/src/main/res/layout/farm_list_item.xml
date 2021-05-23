@@ -35,8 +35,11 @@
 
             <TextView
                 android:id="@+id/farm_description"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:maxLines="1"
+                android:gravity="center"
                 android:text="sezonsko sadje in zelenjava"
                 android:textSize="12sp"
                 android:layout_below="@+id/farm_name"

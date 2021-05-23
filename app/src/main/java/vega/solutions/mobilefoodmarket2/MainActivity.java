@@ -1,5 +1,6 @@
 package vega.solutions.mobilefoodmarket2;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -8,6 +9,7 @@ import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -49,8 +51,6 @@ public class MainActivity extends AppCompatActivity {
             home = new HomeFragment();
 
         setFragment(home);
-
-
 
         // TODO - fragments should be reused
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

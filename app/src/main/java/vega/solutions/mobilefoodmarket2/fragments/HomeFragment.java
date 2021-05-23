@@ -192,9 +192,9 @@ public class HomeFragment extends Fragment {
     }
 
     private void updateLists(List items) {
-        farmRecyclerAdapter.list = items;
         Collections.swap(items, 0, 3);
         Collections.swap(items, 3, 2);
+        farmRecyclerAdapter.list = items;
         farmRecyclerAdapter.notifyDataSetChanged();
 
         ArrayList<Farm> items2 = new ArrayList<>(items);

@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="vega.solutions.mobilefoodmarket2">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <application
         android:name=".MobileMarketApp"
@@ -12,15 +13,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MobileFoodMarket2">
-        <activity android:name=".MainActivity">
+        <activity android:name=".fragments.LauncherActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FarmActivity"
-            android:exported="true"></activity>
+        <activity android:name=".MainActivity">
+        </activity>
+        <activity
+            android:name=".FarmActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

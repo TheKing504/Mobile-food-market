@@ -104,6 +104,7 @@
                         android:text="Ocena: "
                         android:layout_centerVertical="true"
                         android:paddingStart="25dp"
+                        android:textStyle="bold"
                         android:textSize="15sp"/>
 
 

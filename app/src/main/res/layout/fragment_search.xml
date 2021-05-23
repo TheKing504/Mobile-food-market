@@ -55,6 +55,7 @@
                     android:padding="12dp"/>
 
                 <EditText
+                    android:id="@+id/search"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@null"
@@ -66,8 +67,10 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_rv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
             android:layout_below="@+id/search_container"
             tools:listitem="@layout/search_item_list"/>
 
